@@ -12,7 +12,7 @@ const EDGE_THRESHOLD = 0.0015;     // коли вмикати avoid (~150м)
 const SPEED = 0.0005;              // ~5м/крок
 
 // --- INITIAL OBJECTS ---
-let objects = Array.from({ length: 200 }).map((_, i) => {
+let objects = Array.from({ length: 100 }).map((_, i) => {
   const angle = Math.random() * 2 * Math.PI;
   return {
     id: `obj-${i + 1}`,
@@ -101,7 +101,7 @@ function updateObject(o) {
 
 
 const DESPAWN_PROBABILITY = 0.1;
-const MAX_OBJECTS = 10;
+const MAX_OBJECTS = 1000;
 
 function spawnObject(id) {
   const angle = Math.random() * 2 * Math.PI;
