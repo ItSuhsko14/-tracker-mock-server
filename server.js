@@ -13,22 +13,22 @@ const allowedOrigins = (process.env.ALLOWED_ORIGINS || "")
   .map(o => o.trim().replace(/\/$/, ''))  // Видаляємо косу риску в кінці, якщо є
   .filter(Boolean);
 
-console.log("Allowed origins:", allowedOrigins);
 
 const app = express();
 
 app.use(cors({
-  origin: function (origin, callback) {
-    console.log('Request origin:', origin);
-    console.log('Allowed origins:', allowedOrigins);
-    console.log('Origin allowed:', allowedOrigins.includes(origin));
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS: " + origin));
-    }
-  },
+  origin: true,
+  // origin: function (origin, callback) {
+  //   console.log('Request origin:', origin);
+  //   console.log('Allowed origins:', allowedOrigins);
+  //   console.log('Origin allowed:', allowedOrigins.includes(origin));
+  //   if (!origin) return callback(null, true);
+  //   if (allowedOrigins.includes(origin)) {
+  //     callback(null, true);
+  //   } else {
+  //     callback(new Error("Not allowed by CORS: " + origin));
+  //   }
+  // },
   credentials: true,
 }));
 
@@ -47,7 +47,7 @@ app.get("/auth/me", (req, res) => {
 
   return res.json({ authorized: false });
 });
-
+У
 app.post("/auth/login", (req, res) => {
   const { code } = req.body;
 
