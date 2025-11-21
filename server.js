@@ -47,7 +47,7 @@ app.get("/auth/me", (req, res) => {
 
   return res.json({ authorized: false });
 });
-У
+
 app.post("/auth/login", (req, res) => {
   const { code } = req.body;
 
