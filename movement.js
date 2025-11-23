@@ -3,9 +3,8 @@ const WANDER_STRENGTH = 0.05;
 const AVOID_STRENGTH = 0.05;        
 const EDGE_THRESHOLD = 0.0005;     
 const SPEED = 0.0005;
-const DEVIATION = 0.1;
 
-const DESPAWN_PROBABILITY = 0.1;
+const DESPAWN_PROBABILITY = 0.01;
 const MAX_OBJECTS = 300;
 
 // --- INITIAL OBJECTS ---
